@@ -7,5 +7,14 @@ on:
 
 jobs:
   build-and-test-unstable:
-    uses: redis/docker-library-redis/.github/workflows/pre-merge.yml@unstable
+    uses: redis/docker-library-redis/.github/workflows/build-n-test.yml@unstable
+    with:
+      release_tag: unstable
+      publish_image: true
+      redisearch_version: master
+      redisjson_version: master
+      redisbloom_version: master
+      redistimeseries_version: master
+      custom_ref_type: branch
+      run_type: nightly
 
